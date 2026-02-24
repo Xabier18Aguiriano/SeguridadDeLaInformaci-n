@@ -3,596 +3,189 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>LosHackers de CDIA — Landing</title>
-  <meta name="description" content="Landing del grupo LosHackers de CDIA: motivación, área de conocimiento y miembros." />
+  <title>Equipo CyberGuard — Landing</title>
+  <meta name="description" content="Landing del equipo CyberGuard: motivación, área de conocimiento y miembros." />
   <style>
-    :root{
-      --bg: #0b1020;
-      --panel: rgba(255,255,255,.06);
-      --panel2: rgba(255,255,255,.09);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.70);
-      --line: rgba(255,255,255,.12);
-      --accent: #7c3aed; /* morado */
-      --accent2:#22c55e; /* verde */
-      --warn:#f59e0b;    /* ámbar */
-      --shadow: 0 16px 40px rgba(0,0,0,.35);
-      --radius: 18px;
-      --radius2: 26px;
-      --max: 1100px;
+    :root {
+      --bg: #f0f4f8;
+      --panel: rgba(255,255,255,.95);
+      --panel2: rgba(255,255,255,.90);
+      --text: #1a202c;
+      --muted: #4a5568;
+      --line: rgba(0,0,0,.08);
+      --accent: #2563eb;  /* azul */
+      --accent2: #16a34a; /* verde */
+      --warn: #f59e0b;    /* ámbar */
+      --shadow: 0 12px 28px rgba(0,0,0,.12);
+      --radius: 14px;
+      --radius2: 22px;
+      --max: 1000px;
       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial;
     }
 
-    *{ box-sizing: border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      font-family: var(--sans);
-      color: var(--text);
-      background:
-        radial-gradient(1200px 700px at 10% 10%, rgba(124,58,237,.28), transparent 55%),
-        radial-gradient(900px 650px at 90% 20%, rgba(34,197,94,.20), transparent 60%),
-        radial-gradient(800px 500px at 70% 90%, rgba(245,158,11,.13), transparent 60%),
-        linear-gradient(180deg, #050814, #0b1020 40%, #070a16);
-      overflow-x:hidden;
-    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; font-family: var(--sans); color: var(--text); background: linear-gradient(160deg, #e0f2fe, #f0f4f8); }
 
-    a{ color:inherit; text-decoration:none; }
-    .wrap{ max-width: var(--max); margin:0 auto; padding: 28px 18px 70px; }
+    a { color: inherit; text-decoration: none; }
+
+    .wrap { max-width: var(--max); margin:0 auto; padding: 32px 20px 60px; }
 
     /* Topbar */
-    .topbar{
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(14px);
-      background: rgba(11,16,32,.55);
+    .topbar {
+      position: sticky; top: 0;
+      background: rgba(255,255,255,.95);
       border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+      z-index: 50;
     }
-    .topbar-inner{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 14px 18px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 12px;
+    .topbar-inner {
+      max-width: var(--max); margin:0 auto; padding: 16px 20px;
+      display:flex; align-items:center; justify-content:space-between;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap: 10px;
-      min-width: 220px;
+    .brand { display:flex; align-items:center; gap: 12px; }
+    .logo {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display:grid; place-items:center; font-family: var(--mono); font-weight: 800; color: white;
     }
-    .logo{
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      background:
-        radial-gradient(circle at 30% 30%, rgba(255,255,255,.25), transparent 45%),
-        linear-gradient(135deg, rgba(124,58,237,.95), rgba(34,197,94,.75));
-      box-shadow: var(--shadow);
-      display:grid;
-      place-items:center;
-      font-family: var(--mono);
-      font-weight: 800;
-      letter-spacing: .5px;
-    }
-    .brand h1{
-      font-size: 14px;
-      margin:0;
-      line-height: 1.1;
-    }
-    .brand p{
-      margin:0;
-      font-size: 12px;
-      color: var(--muted);
-    }
+    .brand h1 { margin:0; font-size:16px; }
+    .brand p { margin:0; font-size:13px; color: var(--muted); }
 
-    .tabs{
-      display:flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content:flex-end;
+    .tabs { display:flex; gap: 10px; flex-wrap: wrap; }
+    .tabbtn {
+      border: 1px solid var(--line); background: var(--panel2); padding:8px 14px; border-radius:999px; font-size:13px; cursor:pointer;
+      transition: all .2s ease;
     }
-    .tabbtn{
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      color: var(--text);
-      padding: 9px 12px;
-      border-radius: 999px;
-      font-size: 13px;
-      cursor:pointer;
-      transition: transform .08s ease, background .2s ease, border-color .2s ease;
-      user-select:none;
-    }
-    .tabbtn:hover{ background: rgba(255,255,255,.08); }
-    .tabbtn:active{ transform: translateY(1px); }
-    .tabbtn[aria-selected="true"]{
-      background: linear-gradient(135deg, rgba(124,58,237,.35), rgba(34,197,94,.22));
-      border-color: rgba(124,58,237,.55);
-    }
+    .tabbtn:hover { background: var(--panel); }
+    .tabbtn[aria-selected="true"] { background: var(--accent); color: white; border-color: var(--accent2); }
 
     /* Hero */
-    .hero{
-      margin-top: 18px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius2);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position: relative;
-    }
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background:
-        radial-gradient(600px 260px at 15% 25%, rgba(124,58,237,.18), transparent 70%),
-        radial-gradient(680px 300px at 85% 35%, rgba(34,197,94,.14), transparent 72%);
-      pointer-events:none;
-    }
-    .hero-inner{
-      position:relative;
-      padding: 28px 22px;
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 18px;
-      align-items: center;
-    }
-    .hero h2{
-      margin:0 0 10px;
-      font-size: clamp(22px, 3.3vw, 38px);
-      letter-spacing: -0.5px;
-    }
-    .hero h2 span{
-      background: linear-gradient(90deg, rgba(124,58,237,1), rgba(34,197,94,1));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .hero p{
-      margin:0 0 14px;
-      color: var(--muted);
-      line-height: 1.55;
-      font-size: 15px;
-      max-width: 58ch;
-    }
-    .hero .chips{
-      display:flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
-    .chip{
-      font-family: var(--mono);
-      font-size: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid var(--line);
-      color: rgba(255,255,255,.82);
-    }
-    .cta{
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-    }
-    .btn{
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      padding: 10px 12px;
-      border-radius: 12px;
-      font-size: 14px;
-      cursor:pointer;
-      transition: transform .08s ease, background .2s ease, border-color .2s ease;
-    }
-    .btn:hover{ background: rgba(255,255,255,.08); }
-    .btn:active{ transform: translateY(1px); }
-    .btn.primary{
-      border-color: rgba(124,58,237,.55);
-      background: linear-gradient(135deg, rgba(124,58,237,.40), rgba(34,197,94,.22));
-    }
+    .hero { margin-top: 20px; background: var(--panel); border-radius: var(--radius2); box-shadow: var(--shadow); overflow:hidden; padding: 28px; display:grid; grid-template-columns:1.2fr .8fr; gap:18px; }
+    .hero h2 { margin:0 0 10px; font-size:clamp(24px, 3vw, 36px); }
+    .hero h2 span { color: var(--accent); font-weight:600; }
+    .hero p { margin:0 0 16px; color: var(--muted); line-height:1.6; }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+    .chip { font-family: var(--mono); font-size:12px; padding:6px 10px; border-radius:999px; background: #e0f2fe; color: var(--accent2); }
 
-    .hero-card{
-      border: 1px solid var(--line);
-      background: rgba(0,0,0,.18);
-      border-radius: var(--radius);
-      padding: 16px;
-    }
-    .hero-card h3{
-      margin:0 0 10px;
-      font-size: 14px;
-      color: rgba(255,255,255,.85);
-      letter-spacing: .2px;
-    }
-    .stat{
-      display:flex;
-      align-items:flex-start;
-      gap: 10px;
-      padding: 10px 0;
-      border-top: 1px dashed rgba(255,255,255,.14);
-    }
-    .stat:first-of-type{ border-top: none; padding-top: 0; }
-    .dot{
-      width:10px; height:10px; border-radius:999px; margin-top: 6px;
-      background: var(--accent);
-      box-shadow: 0 0 0 4px rgba(124,58,237,.12);
-      flex: 0 0 auto;
-    }
-    .dot.green{ background: var(--accent2); box-shadow: 0 0 0 4px rgba(34,197,94,.12); }
-    .dot.warn{ background: var(--warn); box-shadow: 0 0 0 4px rgba(245,158,11,.12); }
-    .stat b{ display:block; font-size: 13px; }
-    .stat span{ display:block; color: var(--muted); font-size: 12px; line-height:1.35; }
+    .cta { display:flex; gap:12px; margin-top:16px; flex-wrap:wrap; }
+    .btn { border:none; padding:10px 16px; border-radius:12px; font-size:14px; cursor:pointer; transition:.2s; background:#fff; box-shadow:0 4px 12px rgba(0,0,0,.08); }
+    .btn.primary { background: var(--accent); color:#fff; }
 
-    /* Sections */
-    .grid{
-      margin-top: 18px;
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-    .card{
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      border-radius: var(--radius);
-      padding: 16px;
-      box-shadow: 0 10px 28px rgba(0,0,0,.22);
-    }
-    .card h3{
-      margin:0 0 8px;
-      font-size: 16px;
-      letter-spacing: -0.2px;
-    }
-    .card p{
-      margin:0;
-      color: var(--muted);
-      line-height: 1.55;
-      font-size: 14px;
-    }
-    .list{
-      margin: 10px 0 0;
-      padding: 0;
-      list-style:none;
-      display:grid;
-      gap: 8px;
-    }
-    .li{
-      display:flex;
-      gap: 10px;
-      align-items:flex-start;
-      padding: 10px 10px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.12);
-      border-radius: 14px;
-    }
-    .badge{
-      font-family: var(--mono);
-      font-size: 12px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
-      color: rgba(255,255,255,.85);
-      flex: 0 0 auto;
-      margin-top: 1px;
-    }
-
-    /* Tabs content */
-    main{ margin-top: 16px; }
-    .panel{ display:none; }
-    .panel.active{ display:block; }
+    /* Cards */
+    .card { background: var(--panel); border-radius: var(--radius); padding:20px; margin-top:16px; box-shadow: var(--shadow); }
+    .card h3 { margin:0 0 10px; font-size:16px; color: var(--accent); }
+    .card p { margin:0; color: var(--text); line-height:1.6; }
+    .list { margin:12px 0 0; padding:0; list-style:none; display:grid; gap:8px; }
+    .li { display:flex; gap:10px; padding:10px; background: #f9fafb; border-radius:12px; }
+    .badge { font-family: var(--mono); font-size:12px; background:#2563eb; color:#fff; padding:3px 7px; border-radius:999px; flex:0 0 auto; }
 
     /* Members */
-    .members{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 10px;
-    }
-    .member{
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.14);
-      border-radius: 18px;
-      padding: 14px;
-      position:relative;
-      overflow:hidden;
-    }
-    .member::before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background: radial-gradient(320px 160px at 30% 0%, rgba(124,58,237,.16), transparent 60%);
-      pointer-events:none;
-    }
-    .member .avatar{
-      width: 42px; height: 42px; border-radius: 14px;
-      background: linear-gradient(135deg, rgba(124,58,237,.75), rgba(255,255,255,.08));
-      border: 1px solid rgba(255,255,255,.14);
-      display:grid; place-items:center;
-      font-family: var(--mono);
-      font-weight: 800;
-      box-shadow: 0 10px 22px rgba(0,0,0,.25);
-      position:relative;
-    }
-    .member b{ display:block; margin-top: 10px; font-size: 14px; position:relative; }
-    .member span{ display:block; color: var(--muted); font-size: 12px; margin-top: 3px; position:relative; }
+    .members { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; margin-top:10px; }
+    .member { background:#fff; border-radius:16px; padding:16px; box-shadow:0 8px 20px rgba(0,0,0,.08); text-align:center; }
+    .member .avatar { width:44px; height:44px; border-radius:12px; background: var(--accent2); display:grid; place-items:center; color:#fff; font-weight:800; margin:0 auto 10px; }
+    .member b { display:block; margin-bottom:6px; font-size:14px; }
+    .member span { display:block; font-size:12px; color:var(--muted); }
 
-    /* Footer */
-    footer{
-      margin-top: 18px;
-      border-top: 1px solid var(--line);
-      padding-top: 18px;
-      color: rgba(255,255,255,.70);
-      font-size: 12px;
-      display:flex;
-      justify-content:space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .kbd{
-      font-family: var(--mono);
-      border: 1px solid rgba(255,255,255,.16);
-      border-bottom-color: rgba(255,255,255,.28);
-      background: rgba(255,255,255,.06);
-      padding: 3px 7px;
-      border-radius: 8px;
-      color: rgba(255,255,255,.80);
-    }
-
-    /* Responsive */
-    @media (max-width: 880px){
-      .hero-inner{ grid-template-columns: 1fr; }
-      .grid{ grid-template-columns: 1fr; }
-      .members{ grid-template-columns: 1fr; }
-      .brand{ min-width: unset; }
-      .topbar-inner{ align-items:flex-start; }
-      .tabs{ justify-content:flex-start; }
-    }
+    footer { margin-top:24px; font-size:12px; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
   </style>
 </head>
 <body>
-
   <header class="topbar">
     <div class="topbar-inner">
-      <div class="brand" aria-label="Marca del grupo">
-        <div class="logo" aria-hidden="true">&lt;/&gt;</div>
+      <div class="brand">
+        <div class="logo">&lt;/&gt;</div>
         <div>
-          <h1>LosHackers de CDIA</h1>
-          <p>Asociación (inventada) — Seguridad, ética y cacharreo</p>
+          <h1>CyberGuard</h1>
+          <p>Protección, práctica y ética digital</p>
         </div>
       </div>
-
-      <!--
-        PESTAÑAS:
-        - Landing: la portada básica.
-        - Práctica 1 / 2 / 3: secciones “clonables” para ir ampliando el proyecto según hagáis prácticas.
-        Para añadir una nueva pestaña: duplica un botón + duplica un <section class="panel"> con el mismo data-panel.
-      -->
-      <nav class="tabs" aria-label="Navegación por pestañas">
-        <button class="tabbtn" data-tab="landing" aria-selected="true">Landing</button>
-        <button class="tabbtn" data-tab="p1" aria-selected="false">Práctica 1</button>
-        <button class="tabbtn" data-tab="p2" aria-selected="false">Práctica 2</button>
-        <button class="tabbtn" data-tab="p3" aria-selected="false">Práctica 3</button>
+      <nav class="tabs">
+        <button class="tabbtn" data-tab="landing" aria-selected="true">Inicio</button>
+        <button class="tabbtn" data-tab="p1">Práctica 1</button>
+        <button class="tabbtn" data-tab="p2">Práctica 2</button>
+        <button class="tabbtn" data-tab="p3">Práctica 3</button>
       </nav>
     </div>
   </header>
 
   <div class="wrap">
     <main>
-      <!-- ================== LANDING ================== -->
       <section class="panel active" data-panel="landing">
-        <section class="hero" aria-label="Sección principal">
-          <div class="hero-inner">
-            <div>
-              <h2>Somos <span>LosHackers de CDIA</span>, pero con código limpio y conciencia 😄</h2>
-              <p>
-                Nacimos para demostrar que la seguridad no va de “ser malo”, sino de <b>pensar como un atacante</b>
-                para proteger mejor. Nuestro rollo: practicar, documentar, compartir y aprender sin humo.
-              </p>
-
-              <div class="chips" aria-label="Etiquetas del grupo">
-                <div class="chip">#Ciberseguridad</div>
-                <div class="chip">#Concienciación</div>
-                <div class="chip">#Hardening</div>
-                <div class="chip">#Web &amp; XSS</div>
-                <div class="chip">#EthicalHacking</div>
-              </div>
-
-              <div class="cta" aria-label="Acciones rápidas">
-                <a class="btn primary" href="#miembros">Ver miembros</a>
-                <a class="btn" href="#motivacion">Motivación</a>
-                <a class="btn" href="#area">Área de conocimiento</a>
-              </div>
+        <section class="hero">
+          <div>
+            <h2>Bienvenidos a <span>CyberGuard</span></h2>
+            <p>Nos dedicamos a la seguridad y concienciación digital con prácticas éticas y aprendizaje continuo.</p>
+            <div class="chips">
+              <div class="chip">#Ciberseguridad</div>
+              <div class="chip">#ConcienciaDigital</div>
+              <div class="chip">#PrácticasSeguras</div>
+              <div class="chip">#WebSecurity</div>
+              <div class="chip">#EthicalHacking</div>
             </div>
-
-            <aside class="hero-card" aria-label="Resumen rápido">
-              <h3>Checklist de la filosofía del grupo</h3>
-
-              <div class="stat">
-                <div class="dot"></div>
-                <div>
-                  <b>El eslabón débil existe</b>
-                  <span>No solo software: también personas, procesos y dispositivos físicos.</span>
-                </div>
-              </div>
-
-              <div class="stat">
-                <div class="dot green"></div>
-                <div>
-                  <b>Seguridad por capas</b>
-                  <span>Hardening + mínimos privilegios + monitorización + buenas prácticas.</span>
-                </div>
-              </div>
-
-              <div class="stat">
-                <div class="dot warn"></div>
-                <div>
-                  <b>Curiosidad con límites</b>
-                  <span>Laboratorio controlado, ética primero, y nada de liarla en producción.</span>
-                </div>
-              </div>
-            </aside>
+            <div class="cta">
+              <a class="btn primary" href="#miembros">Ver miembros</a>
+              <a class="btn" href="#motivacion">Motivación</a>
+              <a class="btn" href="#area">Área de conocimiento</a>
+            </div>
           </div>
         </section>
 
         <div class="grid">
-          <section id="motivacion" class="card" aria-label="Motivación">
-            <h3>Motivo (inventado) de creación</h3>
-            <p>
-              En el TEMA 1 vimos una realidad: <b>la mayoría de incidentes no empiezan con “hackers de película”</b>,
-              sino con fallos normales: contraseñas flojas, USBs “olvidados”, permisos de más, o un click con prisa.
-              Así que montamos LosHackers de CDIA para entrenar el ojo crítico y bajar el riesgo con hábitos simples.
-            </p>
-
-            <ul class="list" aria-label="Puntos clave de motivación">
-              <li class="li"><span class="badge">01</span><span>Convertir sustos en aprendizaje: documentar fallos y cómo evitarlos.</span></li>
-              <li class="li"><span class="badge">02</span><span>Practicar ataques comunes en entorno seguro para entender defensas reales.</span></li>
-              <li class="li"><span class="badge">03</span><span>Mejorar cultura: que la seguridad no sea “cosa del de IT”, sino del equipo.</span></li>
-            </ul>
+          <section id="motivacion" class="card">
+            <h3>Motivación</h3>
+            <p>Queremos que la seguridad sea entendida y practicada por todos, no solo por expertos. Aprender, practicar y compartir es nuestra filosofía.</p>
           </section>
 
-          <section id="area" class="card" aria-label="Área de conocimiento">
+          <section id="area" class="card">
             <h3>Área de conocimiento</h3>
-            <p>
-              Tocamos un poco de todo, pero con foco práctico: <b>seguridad web</b>, <b>hardening de sistemas</b>,
-              <b>gestión de accesos</b> y <b>amenazas con dispositivos físicos</b>.
-              Si algo se puede medir, se mide; si algo se puede automatizar, se automatiza (pero bien).
-            </p>
-
-            <ul class="list" aria-label="Áreas específicas">
-              <li class="li"><span class="badge">WEB</span><span>XSS, CSRF, sesiones, headers, validación y sanitización.</span></li>
-              <li class="li"><span class="badge">SYS</span><span>SSH por claves, bloqueo de root, logs, firewalls, backups.</span></li>
-              <li class="li"><span class="badge">HUM</span><span>Concienciación: phishing, ingeniería social y hábitos seguros.</span></li>
-              <li class="li"><span class="badge">PHY</span><span>Riesgos de USB/BadUSB, equipos expuestos y controles físicos.</span></li>
-            </ul>
+            <p>Nos centramos en seguridad web, hardening de sistemas, gestión de accesos y amenazas físicas de dispositivos. Todo con enfoque práctico y medible.</p>
           </section>
         </div>
 
-        <section class="card" style="margin-top:14px" aria-label="Descripción curiosa">
-          <h3>Descripción curiosa (para que se os quede)</h3>
-          <p>
-            Tenemos una norma no escrita: <b>“Si funciona, se revisa; si no funciona, también”</b>.
-            Y otra más: cada práctica termina con un “post-mortem” cortito:
-            qué hemos tocado, qué riesgo había, cómo lo dejaríamos seguro y qué aprendizaje nos llevamos.
-            Vamos, que aquí se viene a cacharrear… pero con casco.
-          </p>
-        </section>
-
-        <section id="miembros" class="card" style="margin-top:14px" aria-label="Miembros del grupo">
-          <h3>Miembros (poned aquí vuestros nombres)</h3>
-          <p style="margin-bottom:10px">
-            Edita estos bloques y mete el nombre real de cada integrante. (He puesto placeholders).
-          </p>
-
+        <section id="miembros" class="card">
+          <h3>Miembros</h3>
           <div class="members">
             <div class="member">
-              <div class="avatar" aria-hidden="true">A1</div>
-              <b>Nombre Apellido 1</b>
+              <div class="avatar">A1</div>
+              <b>Xabier Aguiriano 1</b>
               <span>Rol: Documentación / Web / “El que apunta todo”</span>
             </div>
-
             <div class="member">
-              <div class="avatar" aria-hidden="true">A2</div>
-              <b>Nombre Apellido 2</b>
+              <div class="avatar">A2</div>
+              <b>Jon Ruiz</b>
               <span>Rol: Sistemas / SSH / Hardening</span>
             </div>
-
             <div class="member">
-              <div class="avatar" aria-hidden="true">A3</div>
-              <b>Nombre Apellido 3</b>
+              <div class="avatar">A3</div>
+              <b>Jon Atela</b>
               <span>Rol: Testing / Ataques comunes / QA del caos</span>
             </div>
           </div>
-
-          <!--
-            Si sois más:
-            - Duplica un bloque .member
-            - Cambia el "A4" por iniciales o un código
-          -->
         </section>
       </section>
 
-      <!-- ================== PRÁCTICA 1 ================== -->
-      <section class="panel" data-panel="p1">
-        <section class="card">
-          <h3>Práctica 1 — Plantilla lista</h3>
-          <p>
-            Aquí iría el contenido de la práctica 1. Copia este patrón para cada práctica:
-            <b>objetivo</b>, <b>pasos</b>, <b>capturas</b> (si hace falta), <b>riesgos</b> y <b>mitigaciones</b>.
-          </p>
-
-          <ul class="list" aria-label="Estructura recomendada práctica 1">
-            <li class="li"><span class="badge">OBJ</span><span>Qué queríamos conseguir (en una frase).</span></li>
-            <li class="li"><span class="badge">PASOS</span><span>Lista de pasos reproducibles (sin saltos raros).</span></li>
-            <li class="li"><span class="badge">RIESGO</span><span>Qué podría salir mal / qué vector de ataque hay.</span></li>
-            <li class="li"><span class="badge">FIX</span><span>Cómo lo dejaríamos seguro (hardening, permisos, etc.).</span></li>
-          </ul>
-        </section>
-      </section>
-
-      <!-- ================== PRÁCTICA 2 ================== -->
-      <section class="panel" data-panel="p2">
-        <section class="card">
-          <h3>Práctica 2 — Plantilla lista</h3>
-          <p>
-            Repite el mismo esquema. Si esta práctica es de web, apunta vulnerabilidad, prueba y corrección.
-          </p>
-          <ul class="list" aria-label="Estructura recomendada práctica 2">
-            <li class="li"><span class="badge">VULN</span><span>Qué vulnerabilidad tocamos (ej: XSS reflejado).</span></li>
-            <li class="li"><span class="badge">POC</span><span>Cómo la demostramos en entorno controlado.</span></li>
-            <li class="li"><span class="badge">PATCH</span><span>Qué cambiamos para arreglarla (validación/escape/headers).</span></li>
-            <li class="li"><span class="badge">LEARN</span><span>Qué nos llevamos de aprendizaje.</span></li>
-          </ul>
-        </section>
-      </section>
-
-      <!-- ================== PRÁCTICA 3 ================== -->
-      <section class="panel" data-panel="p3">
-        <section class="card">
-          <h3>Práctica 3 — Plantilla lista</h3>
-          <p>
-            Ideal para cosas de sistemas: SSH por claves, desactivar password, bloquear root, etc.
-          </p>
-          <ul class="list" aria-label="Estructura recomendada práctica 3">
-            <li class="li"><span class="badge">SSH</span><span>Acceso por clave pública/privada, sin contraseña.</span></li>
-            <li class="li"><span class="badge">ROOT</span><span>Deshabilitar login de root y usar sudo.</span></li>
-            <li class="li"><span class="badge">FW</span><span>Firewall básico + puertos necesarios únicamente.</span></li>
-            <li class="li"><span class="badge">LOGS</span><span>Monitorización mínima (intentos fallidos, alertas).</span></li>
-          </ul>
-        </section>
-      </section>
+      <!-- Prácticas -->
+      <section class="panel" data-panel="p1"><section class="card"><h3>Práctica 1</h3></section></section>
+      <section class="panel" data-panel="p2"><section class="card"><h3>Práctica 2</h3></section></section>
+      <section class="panel" data-panel="p3"><section class="card"><h3>Práctica 3</h3></section></section>
     </main>
 
     <footer>
-      <div>
-        <span class="kbd">TIP</span> Puedes navegar con las pestañas de arriba. Cada práctica = nueva pestaña + nueva sección.
-      </div>
-      <div>
-        © <span id="year"></span> LosHackers de CDIA — Proyecto web (estructura para servidores)
-      </div>
+      <div>© <span id="year"></span> CyberGuard — Proyecto web</div>
+      <div>Tip: Navega usando las pestañas superiores.</div>
     </footer>
   </div>
 
   <script>
-    // Tabs switching (simple y sin dependencias)
     const buttons = Array.from(document.querySelectorAll(".tabbtn"));
     const panels = Array.from(document.querySelectorAll(".panel"));
-
     function activate(tabName){
-      buttons.forEach(b => b.setAttribute("aria-selected", String(b.dataset.tab === tabName)));
-      panels.forEach(p => p.classList.toggle("active", p.dataset.panel === tabName));
-      // scroll suave arriba para que se note el cambio
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      buttons.forEach(b=>b.setAttribute("aria-selected", b.dataset.tab===tabName));
+      panels.forEach(p=>p.classList.toggle("active", p.dataset.panel===tabName));
+      window.scrollTo({top:0, behavior:"smooth"});
     }
-
-    buttons.forEach(btn => {
-      btn.addEventListener("click", () => activate(btn.dataset.tab));
-    });
-
-    // Año en footer
+    buttons.forEach(btn=>btn.addEventListener("click", ()=>activate(btn.dataset.tab)));
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
