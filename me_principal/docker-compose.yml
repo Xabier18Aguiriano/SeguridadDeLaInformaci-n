@@ -1,0 +1,12 @@
+services:
+  me_principal:
+    build: .
+    container_name: me_principal
+    env_file: .env
+    restart: always
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
