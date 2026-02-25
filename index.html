@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZeroDay Shield — Seguridad de la Información</title>
+  <!-- CSS conectado -->
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>ZeroDay Shield</h1>
+    <p>Protegiendo la información, aprendiendo a anticipar ataques</p>
+    <nav>
+      <button onclick="showTab('home')">Inicio</button>
+      <button onclick="showTab('p1')">Práctica 1</button>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <!-- LANDING / INICIO -->
+    <section id="home" class="tab active">
+      <h2 id="typer"></h2>
+
+      <div class="card">
+        <h3>Motivo de creación</h3>
+        <p>Simular una asociación de seguridad para aprender a proteger sistemas y datos sensibles.</p>
+      </div>
+
+      <div class="card">
+        <h3>Área de conocimiento</h3>
+        <ul>
+          <li><span>Seguridad en redes</span></li>
+          <li><span>Hardening de servidores</span></li>
+          <li><span>Desarrollo seguro</span></li>
+          <li><span>Análisis de vulnerabilidades</span></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Miembros</h3>
+        <div class="members">
+          <div class="member"><b>Xabier Aguiriano</b><span>Analista de Vulnerabilidades</span></div>
+          <div class="member"><b>Jon Ruiz</b><span>Pentester</span></div>
+          <div class="member"><b>Jon Atela</b><span>Auditor de Sistemas</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Descripción curiosa</h3>
+        <p>El nombre "ZeroDay Shield" simboliza cómo nos anticipamos a vulnerabilidades desconocidas.</p>
+      </div>
+
+      <div class="card" id="countdown">
+        <!-- Contador opcional -->
+      </div>
+    </section>
+
+    <!-- PRÁCTICA 1 -->
+    <section id="p1" class="tab">
+      <h2>Práctica 1</h2>
+      <p>Se ha trabajado la estructura básica de un proyecto web para desplegar con Docker.</p>
+      <ul>
+        <li><span>Creación de carpetas y assets</span></li>
+        <li><span>Configuración de Dockerfile</span></li>
+        <li><span>docker-compose para contenedor</span></li>
+        <li><span>Despliegue en entorno local</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 ZeroDay Shield - Proyecto académico
+  </footer>
+
+  <!-- JS conectado -->
+  <script src="assets/main.js"></script>
+
+  <!-- Función de pestañas -->
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      const target = document.getElementById(tabId);
+      if(target) target.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>

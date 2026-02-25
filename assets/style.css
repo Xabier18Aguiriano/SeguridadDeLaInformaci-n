@@ -1,0 +1,139 @@
+/* ===== Estilo general dark cyber ===== */
+body {
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  background: radial-gradient(circle at 20% 20%, #0b0f1a, #0a0c14);
+  color: #cfd8dc;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(90deg, #0d47a1, #004d40);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  color: #fff;
+}
+
+header h1 {
+  font-family: 'Courier New', monospace;
+  font-size: 2rem;
+  color: #00ffea;
+  text-shadow: 0 0 10px #00ffea;
+}
+
+header p {
+  font-size: 1rem;
+  color: #8bf5ea;
+  margin-top: 0.5rem;
+}
+
+nav button {
+  background: transparent;
+  border: 1px solid #00ffea;
+  color: #00ffea;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+nav button:hover {
+  background: #00ffea1a;
+  box-shadow: 0 0 10px #00ffea;
+}
+
+main {
+  padding: 2rem;
+}
+
+.tab {
+  display: none;
+}
+
+.tab.active {
+  display: block;
+}
+
+h2 {
+  font-family: 'Courier New', monospace;
+  font-size: 1.8rem;
+  color: #00ffea;
+  text-shadow: 0 0 6px #00ffea;
+}
+
+h3 {
+  font-family: 'Courier New', monospace;
+  color: #76ff03;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+ul li {
+  margin: 0.5rem 0;
+}
+
+ul li span {
+  display: block;
+  padding: 0.2rem 0.5rem;
+  background: #004d40;
+  border-left: 3px solid #00ffea;
+  margin-bottom: 0.3rem;
+  border-radius: 4px;
+  color: #cfd8dc;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #0d47a1;
+  color: #b2ebf2;
+}
+
+/* Typing effect */
+#typer {
+  font-family: 'Courier New', monospace;
+  font-size: 1.4rem;
+  color: #00ffea;
+  text-shadow: 0 0 5px #00ffea;
+  min-height: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Members card */
+.members {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.member {
+  background: #001f26;
+  border: 1px solid #00ffea;
+  padding: 1rem;
+  border-radius: 10px;
+  flex: 1 1 200px;
+  box-shadow: 0 0 10px #00ffea33;
+}
+
+.member b {
+  color: #76ff03;
+  font-size: 1.1rem;
+}
+
+.member span {
+  color: #8bf5ea;
+  font-size: 0.9rem;
+}
+
+/* Cards glow */
+.card {
+  background: #001f26;
+  border-left: 3px solid #00ffea;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 15px #00ffea33;
+}
