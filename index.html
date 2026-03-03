@@ -16,6 +16,7 @@
     <nav>
       <button onclick="showTab('home')">Inicio</button>
       <button onclick="showTab('p1')">Práctica 1</button>
+      <button onclick="showTab('p2')">Práctica 2</button>
     </nav>
   </header>
 
@@ -41,35 +42,100 @@
       </div>
 
       <div class="card">
-        <h3>Miembros</h3>
-        <div class="members">
-          <div class="member"><b>Xabier Aguiriano</b><span>Analista de Vulnerabilidades</span></div>
-          <div class="member"><b>Jon Ruiz</b><span>Pentester</span></div>
-          <div class="member"><b>Jon Atela</b><span>Auditor de Sistemas</span></div>
-        </div>
-      </div>
-
-      <div class="card">
         <h3>Descripción curiosa</h3>
         <p>El nombre "ZeroDay Shield" simboliza cómo nos anticipamos a vulnerabilidades desconocidas.</p>
       </div>
 
+      <div class="card">
+        <h3>Miembros</h3>
+        <div class="members">
+          <div class="member"><b>Xabier Aguiriano: </b><span>Analista de amenazas junior (recién reincorporado al perímetro académico)</span></div>
+          <div class="member"><b>Jon Ruiz: </b><span>Especialista en detección de riesgos potenciales (con acceso limitado hasta esta semana)</span></div>
+          <div class="member"><b>Jon Atela: </b><span>Coordinador de estrategia académica y adaptación acelerada</span></div>
+        </div>
+      </div>
+
       <div class="card" id="countdown">
-        <!-- Contador opcional -->
       </div>
     </section>
 
-    <!-- PRÁCTICA 1 -->
+    <!-- ================= PRÁCTICA 1 ================= -->
     <section id="p1" class="tab">
       <h2>Práctica 1</h2>
-      <p>Se ha trabajado la estructura básica de un proyecto web para desplegar con Docker.</p>
-      <ul>
-        <li><span>Creación de carpetas y assets</span></li>
-        <li><span>Configuración de Dockerfile</span></li>
-        <li><span>docker-compose para contenedor</span></li>
-        <li><span>Despliegue en entorno local</span></li>
-      </ul>
+
+      <div class="card">
+        <h3>Estado de la práctica</h3>
+        <p>
+          No pudimos realizar esta práctica porque durante su desarrollo
+          nos encontrábamos de Erasmus. Cambiamos temporalmente el aula
+          por la experiencia internacional.
+        </p>
+        <p>
+          Aun así, revisamos el contenido para mantenernos alineados con
+          los conceptos de Seguridad de la Información.
+        </p>
+      </div>
     </section>
+
+
+    <!-- ================= PRÁCTICA 2 ================= -->
+    <section id="p2" class="tab">
+      <h2>Práctica 2</h2>
+
+      <!-- INTRODUCCIÓN -->
+      <div class="card">
+        <h3>Introducción</h3>
+        <p>
+          En esta práctica analizamos cómo detectar software sospechoso
+          y qué medidas pueden aplicarse para evitar la ejecución de
+          programas no autorizados en entornos corporativos.
+        </p>
+      </div>
+
+      <!-- CAPTURAS -->
+      <div class="card">
+        <h3>Capturas de pantalla</h3>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+
+          <div style="flex:1 1 45%; border:1px solid #00ffea; border-radius:10px; overflow:hidden;">
+            <img src="images/captura1.png" style="width:100%;">
+          </div>
+
+          <div style="flex:1 1 45%; border:1px solid #00ffea; border-radius:10px; overflow:hidden;">
+            <img src="images/captura2.png" style="width:100%;">
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Análisis y conclusiones</h3>
+
+        <div class="respuestas">
+      
+          <div class="respuesta">
+          1. Un ejecutable puede ser sospechoso si proviene de fuentes no oficiales,
+          imita procesos del sistema o pide permisos elevados sin motivo.
+          </div>
+
+          <div class="respuesta">
+          2. Las organizaciones pueden aplicar listas blancas, limitar privilegios
+          y usar soluciones EDR o antivirus para bloquear software no autorizado.
+          </div>
+
+          <div class="respuesta">
+          3. La ingeniería social facilita estos ataques cuando el archivo parece
+          provenir de una entidad confiable.
+          </div>
+
+          <div class="respuesta">
+          4. El acceso físico incrementa el riesgo al permitir instalar software
+          o modificar configuraciones directamente.
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- FOOTER -->
