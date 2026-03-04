@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica 3: Reflected XSS — ZeroDay Shield</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>ZeroDay Shield</h1>
+  <p>Laboratorio de Vulnerabilidades: Cross-Site Scripting (XSS)</p>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="practica1.html">Práctica 1</a>
+    <a href="practica2.html">Práctica 2</a>
+    <a href="practica3.html">Práctica 3</a>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h2>Vulnerabilidad de Inyección (XSS Reflejado)</h2>
+    <p>En esta práctica simulamos cómo un atacante puede ejecutar scripts en el navegador de la víctima si la aplicación no sanea las entradas.</p>
+
+    <div class="card xss-container">
+      <div class="input-group">
+        <h3>1. Buscador de Amenazas</h3>
+        <input type="text" id="inputBusqueda" placeholder="Ej: Troyano, Ransomware...">
+        <button onclick="buscar()">Buscar</button>
+        <div class="resultado" id="resBusqueda">Esperando entrada...</div>
+      </div>
+
+      <hr>
+
+      <div class="input-group">
+        <h3>2. Registro de Firma Digital</h3>
+        <input type="text" id="inputFirma" placeholder="Escribe tu nombre de analista">
+        <button onclick="firmar()">Registrar Firma</button>
+        <div class="resultado" id="resFirma">Sin firma</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Payload de Prueba</h3>
+      <p>Copia y pega lo siguiente en los campos de arriba para ejecutar el exploit:</p>
+      <code>&lt;img src=x onerror="alert('¡Sistema Vulnerado por XSS!')"&gt;</code>
+    </div>
+
+    <div class="solucion-card">
+      <h3>🛡️ ¿Cómo arreglarlo? (Solución)</h3>
+      <p>El error ocurre porque usamos <code>innerHTML</code>, que renderiza cualquier etiqueta HTML. Para solucionarlo, debemos usar:</p>
+      <ul>
+        <li><strong>textContent:</strong> Inserta el contenido como texto literal, no como HTML.</li>
+        <li><strong>Sanitización:</strong> Filtrar caracteres como <code>&lt;</code>, <code>&gt;</code> y <code>"</code>.</li>
+      </ul>
+      <p><b>Cambio de código:</b></p>
+      <code>elemento.textContent = datos_del_usuario;</code>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2026 ZeroDay Shield - Proyecto académico
+</footer>
+
+<script>
+  function buscar() {
+    const query = document.getElementById('inputBusqueda').value;
+    document.getElementById('resBusqueda').innerHTML = "Buscando información sobre: " + query;
+  }
+
+  function firmar() {
+    const firma = document.getElementById('inputFirma').value;
+    document.getElementById('resFirma').innerHTML = "Última firma: " + firma;
+  }
+</script>
+
+</body>
+</html>

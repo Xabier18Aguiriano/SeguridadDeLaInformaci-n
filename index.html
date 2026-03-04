@@ -4,158 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZeroDay Shield — Seguridad de la Información</title>
-  <!-- CSS conectado -->
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>ZeroDay Shield</h1>
-    <p>Protegiendo la información, aprendiendo a anticipar ataques</p>
-    <nav>
-      <button onclick="showTab('home')">Inicio</button>
-      <button onclick="showTab('p1')">Práctica 1</button>
-      <button onclick="showTab('p2')">Práctica 2</button>
-    </nav>
-  </header>
+<header>
+  <h1>ZeroDay Shield</h1>
+  <p>Protegiendo la información, aprendiendo a anticipar ataques</p>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="practica1.html">Práctica 1</a>
+    <a href="practica2.html">Práctica 2</a>
+    <a href="practica3.html">Práctica 3</a>
+  </nav>
+</header>
 
-  <!-- MAIN -->
-  <main>
-    <!-- LANDING / INICIO -->
-    <section id="home" class="tab active">
-      <h2 id="typer"></h2>
+<main>
 
-      <div class="card">
-        <h3>Motivo de creación</h3>
-        <p>Simular una asociación de seguridad para aprender a proteger sistemas y datos sensibles.</p>
-      </div>
+<section>
+  <h2 id="typer"></h2>
 
-      <div class="card">
-        <h3>Área de conocimiento</h3>
-        <ul>
-          <li><span>Seguridad en redes</span></li>
-          <li><span>Hardening de servidores</span></li>
-          <li><span>Desarrollo seguro</span></li>
-          <li><span>Análisis de vulnerabilidades</span></li>
-        </ul>
-      </div>
+  <div class="card">
+    <h3>Motivo de creación</h3>
+    <p>Simular una asociación de seguridad para aprender a proteger sistemas y datos sensibles.</p>
+  </div>
 
-      <div class="card">
-        <h3>Descripción curiosa</h3>
-        <p>El nombre "ZeroDay Shield" simboliza cómo nos anticipamos a vulnerabilidades desconocidas.</p>
-      </div>
+  <div class="card">
+    <h3>Área de conocimiento</h3>
+    <ul>
+      <li>Seguridad en redes</li>
+      <li>Hardening de servidores</li>
+      <li>Desarrollo seguro</li>
+      <li>Análisis de vulnerabilidades</li>
+    </ul>
+  </div>
 
-      <div class="card">
-        <h3>Miembros</h3>
-        <div class="members">
-          <div class="member"><b>Xabier Aguiriano: </b><span>Analista de amenazas junior (recién reincorporado al perímetro académico)</span></div>
-          <div class="member"><b>Jon Ruiz: </b><span>Especialista en detección de riesgos potenciales (con acceso limitado hasta esta semana)</span></div>
-          <div class="member"><b>Jon Atela: </b><span>Coordinador de estrategia académica y adaptación acelerada</span></div>
-        </div>
-      </div>
+  <div class="card">
+    <h3>Descripción curiosa</h3>
+    <p>El nombre "ZeroDay Shield" simboliza cómo nos anticipamos a vulnerabilidades desconocidas.</p>
+  </div>
 
-      <div class="card" id="countdown">
-      </div>
-    </section>
+  <div class="card">
+    <h3>Miembros</h3>
+    <div class="members">
+      <div class="member"><b>Xabier Aguiriano:</b> Analista de amenazas junior</div>
+      <div class="member"><b>Jon Ruiz:</b> Especialista en detección de riesgos potenciales</div>
+      <div class="member"><b>Jon Atela:</b> Coordinador de estrategia académica</div>
+    </div>
+  </div>
 
-    <!-- ================= PRÁCTICA 1 ================= -->
-    <section id="p1" class="tab">
-      <h2>Práctica 1</h2>
+  <div class="card" id="countdown"></div>
 
-      <div class="card">
-        <h3>Estado de la práctica</h3>
-        <p>
-          No pudimos realizar esta práctica porque durante su desarrollo
-          nos encontrábamos de Erasmus. Cambiamos temporalmente el aula
-          por la experiencia internacional.
-        </p>
-        <p>
-          Aun así, revisamos el contenido para mantenernos alineados con
-          los conceptos de Seguridad de la Información.
-        </p>
-      </div>
-    </section>
+</section>
 
+</main>
 
-    <!-- ================= PRÁCTICA 2 ================= -->
-    <section id="p2" class="tab">
-      <h2>Práctica 2</h2>
+<footer>
+  © 2026 ZeroDay Shield - Proyecto académico
+</footer>
 
-      <!-- INTRODUCCIÓN -->
-      <div class="card">
-        <h3>Introducción</h3>
-        <p>
-          En esta práctica analizamos cómo detectar software sospechoso
-          y qué medidas pueden aplicarse para evitar la ejecución de
-          programas no autorizados en entornos corporativos.
-        </p>
-      </div>
-
-      <!-- CAPTURAS -->
-      <div class="card">
-        <h3>Capturas de pantalla</h3>
-        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-
-          <div style="flex:1 1 45%; border:1px solid #00ffea; border-radius:10px; overflow:hidden;">
-            <img src="images/captura1.png" style="width:100%;">
-          </div>
-
-          <div style="flex:1 1 45%; border:1px solid #00ffea; border-radius:10px; overflow:hidden;">
-            <img src="images/captura2.png" style="width:100%;">
-          </div>
-
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Análisis y conclusiones</h3>
-
-        <div class="respuestas">
-      
-          <div class="respuesta">
-          1. Un ejecutable puede ser sospechoso si proviene de fuentes no oficiales,
-          imita procesos del sistema o pide permisos elevados sin motivo.
-          </div>
-
-          <div class="respuesta">
-          2. Las organizaciones pueden aplicar listas blancas, limitar privilegios
-          y usar soluciones EDR o antivirus para bloquear software no autorizado.
-          </div>
-
-          <div class="respuesta">
-          3. La ingeniería social facilita estos ataques cuando el archivo parece
-          provenir de una entidad confiable.
-          </div>
-
-          <div class="respuesta">
-          4. El acceso físico incrementa el riesgo al permitir instalar software
-          o modificar configuraciones directamente.
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    © 2026 ZeroDay Shield - Proyecto académico
-  </footer>
-
-  <!-- JS conectado -->
-  <script src="assets/main.js"></script>
-
-  <!-- Función de pestañas -->
-  <script>
-    function showTab(tabId) {
-      const tabs = document.querySelectorAll('.tab');
-      tabs.forEach(tab => tab.classList.remove('active'));
-      const target = document.getElementById(tabId);
-      if(target) target.classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
+<script src="assets/main.js"></script>
 
 </body>
 </html>
