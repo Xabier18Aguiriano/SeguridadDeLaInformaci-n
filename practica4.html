@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica 4: Cracking de Hash SHA-256 — ZeroDay Shield</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>ZeroDay Shield</h1>
+  <p>Laboratorio de Seguridad</p>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="practica1.html">Práctica 1</a>
+    <a href="practica2.html">Práctica 2</a>
+    <a href="practica3.html">Práctica 3</a>
+    <a href="practica4.html">Práctica 4</a>
+  </nav>
+</header>
+
+<main>
+
+<section>
+
+<h2>Cracking de Hash SHA-256</h2>
+
+<div class="card">
+<h3>Introducción</h3>
+
+<p>
+En esta práctica se intenta descubrir una contraseña a partir de un hash SHA-256.
+Para ello se usa un script en Python que genera combinaciones de letras,
+calcula su hash y lo compara con el hash almacenado en <code>hash_guardado.txt</code>.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Código utilizado</h3>
+
+<pre><code>
+import hashlib
+import itertools
+import string
+import time
+
+with open("hash_guardado.txt","r") as archivo:
+    hash_objetivo = archivo.read().strip()
+
+print("Hash objetivo:", hash_objetivo)
+
+letras = string.ascii_lowercase
+
+intentos = 0
+inicio = time.time()
+
+for longitud in range(1,5):
+    for combinacion in itertools.product(letras, repeat=longitud):
+
+        password = ''.join(combinacion)
+        intentos += 1
+
+        hash_calculado = hashlib.sha256(password.encode()).hexdigest()
+
+        if hash_calculado == hash_objetivo:
+            fin = time.time()
+
+            print("\nCONTRASEÑA ENCONTRADA")
+            print("Contraseña:", password)
+            print("Intentos:", intentos)
+            print("Tiempo:", round(fin - inicio,4),"segundos")
+            exit()
+
+print("No se encontró la contraseña")
+</code></pre>
+
+</div>
+
+
+<div class="card">
+
+<h3>Resultado</h3>
+
+<p><strong>Contraseña encontrada:</strong></p>
+<code>vini</code>
+
+<p><strong>Intentos realizados:</strong> 393129</p>
+<p><strong>Tiempo:</strong> 0.4843 segundos</p>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+  © 2026 ZeroDay Shield - Proyecto académico
+</footer>
+
+</body>
+</html>
