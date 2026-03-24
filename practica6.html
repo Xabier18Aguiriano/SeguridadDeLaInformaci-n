@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica 6: Backup — ZeroDay Shield</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>ZeroDay Shield</h1>
+  <p>Laboratorio de Seguridad</p>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="practica1.html">Práctica 1</a>
+    <a href="practica2.html">Práctica 2</a>
+    <a href="practica3.html">Práctica 3</a>
+    <a href="practica4.html">Práctica 4</a>
+    <a href="practica5.html">Práctica 5</a>
+    <a href="practica6.html">Práctica 6</a>
+  </nav>
+</header>
+
+<main>
+
+<section>
+
+<h2>Backup Automatizado</h2>
+
+<div class="card">
+<h3>Introducción</h3>
+
+<p>
+En esta práctica se ha desarrollado un script en Python que realiza copias de seguridad
+automáticas entre dos carpetas.
+</p>
+
+<p>
+El sistema detecta archivos nuevos y modificados, crea copias con fecha antes de
+sobrescribirlos y guarda un log con toda la actividad.
+</p>
+
+</div>
+
+<div class="card">
+<h3>Captura 1</h3>
+<p>Vista general de la carpeta del proyecto con el script, las carpetas de origen y archivos de prueba.</p>
+<img src="images/captura6.png" alt="Captura 6">
+</div>
+
+<div class="card">
+<h3>Captura 2</h3>
+<p>Archivo ejemplo.txt dentro de la carpeta de origen (disco_a).</p>
+<img src="images/captura7.png" alt="Captura 7">
+</div>
+
+<div class="card">
+<h3>Captura 3</h3>
+<p>Copia del archivo con fecha y hora generada automáticamente tras una modificación.</p>
+<img src="images/captura8.png" alt="Captura 8">
+</div>
+
+<div class="card">
+<h3>Captura 4</h3>
+<p>Archivo ejemplo.txt actualizado en la carpeta de destino (disco_b).</p>
+<img src="images/captura9.png" alt="Captura 9">
+</div>
+
+<div class="card">
+<h3>Captura 5</h3>
+<p>Archivo backup_log.txt donde se registran todas las acciones realizadas por el script.</p>
+<img src="images/captura10.png" alt="Captura 10">
+</div>
+
+<div class="card">
+<h3>Valoración</h3>
+
+<p>
+Dificultad media, algo más sencilla que la práctica 5. Es útil para entender cómo funcionan
+los backups y el control de cambios en archivos.
+</p>
+
+<p>
+Aun así, este sistema no sería el más adecuado en un entorno real, ya que no incluye
+copias externas, cifrado ni gestión avanzada de versiones. En empresas se utilizan
+soluciones más completas (nube, redundancia, etc.).
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+  © 2026 ZeroDay Shield - Proyecto académico
+</footer>
+
+</body>
+</html>
