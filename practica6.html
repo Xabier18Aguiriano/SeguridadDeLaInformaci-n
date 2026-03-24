@@ -44,6 +44,46 @@ sobrescribirlos y guarda un log con toda la actividad.
 
 </div>
 
+<h2>1. Diseño teórico de una estrategia de BackUp - Toma de decisiones y precios</h2>
+
+<div class="card">
+  <h3>Estrategia A: Empresa de Desarrollo y Hosting (30 trabajadores)</h3>
+  <p><strong>Escenario:</strong> Empresa con alta carga de datos y responsabilidad sobre webs de clientes.</p>
+  
+  <p><strong>A. Sistema Seleccionado: Modelo Híbrido Profesional</strong></p>
+  <ul>
+    <li><strong>Infraestructura:</strong> Se instala un servidor NAS (como un Synology o QNAP) con 4 bahías en RAID 5. Esto permite que si un disco se rompe, la oficina siga trabajando sin perder datos.</li>
+    <li><strong>Copia en la Nube:</strong> El NAS se sincroniza cada noche con AWS S3 Glacier. Usamos "políticas de inmutabilidad", lo que significa que si un virus entra en la oficina, no puede borrar las copias de la nube.</li>
+    <li><strong>Precio Medio:</strong> Inversión inicial de 1.400€ (NAS + Discos Enterprise) y una cuota mensual de unos 90€ por el almacenamiento en la nube.</li>
+  </ul>
+
+  <p><strong>B. Alternativa más barata:</strong></p>
+  <ul>
+    <li><strong>Solución:</strong> Usar un servidor local con Linux y software libre (como Bacula o Rsync) realizando copias a Backblaze B2.</li>
+    <li><strong>Justificación:</strong> Ahorramos en licencias y en hardware de marca, pagando solo unos 5€ al mes por cada TB de datos. Es seguro porque los datos van cifrados antes de salir de la empresa.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>Estrategia B: Desarrollador Autónomo (1 trabajador)</h3>
+  <p><strong>Escenario:</strong> Desarrollador independiente que necesita seguridad sin complicaciones técnicas ni costes altos.</p>
+  
+  <p><strong>A. Sistema Seleccionado: Sincronización + Backup Físico</strong></p>
+  <ul>
+    <li><strong>Infraestructura:</strong> Uso de Microsoft 365 (OneDrive) o Google Workspace. Estos servicios guardan versiones anteriores de cada archivo automáticamente (si te equivocas, puedes "volver atrás" en el tiempo).</li>
+    <li><strong>Copia de Seguridad Extra:</strong> Un disco duro externo SSD de 2TB que se conecta una vez a la semana para clonar todo el sistema de forma manual o con software sencillo.</li>
+    <li><strong>Precio Medio:</strong> Suscripción de 10€/mes y una compra única de 120€ por el disco SSD.</li>
+  </ul>
+
+  <p><strong>B. Alternativa más barata:</strong></p>
+  <ul>
+    <li><strong>Solución:</strong> Utilizar los 15GB gratuitos de Google Drive para los proyectos activos y un disco duro HDD tradicional (más lento pero más barato) para el resto.</li>
+    <li><strong>Justificación:</strong> El coste mensual es 0€. La seguridad se mantiene porque los archivos vitales están en la nube y el resto en un soporte físico fuera de la red.</li>
+  </ul>
+</div>
+
+<h2>2. Desarrollo del script de Backup y Logs mejorados</h2>
+
 <div class="card">
 <h3>Captura 1</h3>
 <p>Vista general de la carpeta del proyecto con el script, las carpetas de origen y archivos de prueba.</p>
